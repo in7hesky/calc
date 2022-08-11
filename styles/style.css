@@ -1,0 +1,40 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 0 auto;
+    border: 2px solid black;
+}
+
+.field {
+    text-align: right;
+    padding: 5px 5px;
+    font-size: 30px;
+    border-bottom: 2px solid black;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.clear, .digit[value="0"], .equals {
+    grid-column: span 2;
+}
+
+button {
+    box-shadow: 1px 1px 2px grey;
+    transition: all 0.15s;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 25px;
+}
+
+button:hover{
+    box-shadow: 1px 1px 2px black;
+}
+
+button:active {
+    background-color: gainsboro;
+}
