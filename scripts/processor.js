@@ -5,7 +5,6 @@ export class Processor {
         let operation
         switch (statement[1]) {
             case "+":
-                console.log("+")
                 operation = this.#add
                 break;
             case "-":
@@ -16,6 +15,7 @@ export class Processor {
                 break;
             case "/":
                 operation = this.#divide
+                break;
         }
         field.setResult(operation(+statement[0], +statement[2]))
     }

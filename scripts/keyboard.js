@@ -19,10 +19,12 @@ export class Keyboard {
             })
             this.operators.forEach(operator => {
                 operator.addEventListener("click", e => {
+                    if (!field.bufferIsBlank()) processor.operate(field)
                     field.sendOperator(e.target.value)
                 })
             })
             this.equals.addEventListener("click", () => {
+                if(field.bufferIsBlank()) return
                 processor.operate(field)
             })
             this.reset.addEventListener("click", () => {

@@ -28,6 +28,10 @@ export class Field {
         this.#resetInput()
     }
     
+    bufferIsBlank () {
+        return !this.buffer.textContent
+    }
+    
     #resetInput() {this.input.textContent = "0"}
     
     #resetBuffer() {this.buffer.textContent = ""}
