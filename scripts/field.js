@@ -20,6 +20,7 @@ export class Field {
     
     sendKey(key) {
         if (this.input.textContent === "0" && key !== ".") this.#clearInput()
+        if (key === "." && this.input.textContent.includes(".")) return
         this.#append(key)
     }
     
