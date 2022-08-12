@@ -1,3 +1,5 @@
+import {Formatter} from "./formatter.js";
+
 export class Processor {
     
     operate(field) {
@@ -17,7 +19,9 @@ export class Processor {
                 operation = this.#divide
                 break;
         }
-        field.setResult(operation(+statement[0], +statement[2]))
+        let result = operation(+statement[0], +statement[2])
+        
+        field.setResult(Formatter.format(result, field.getLength()))
     }
 
     #add(a, b) {

@@ -1,12 +1,19 @@
 export class Field {
-    constructor() {
+    constructor(maxChars = 11) {
+        this._length = maxChars
         this.buffer = document.querySelector(".buffer")
         this.input = document.querySelector(".input")
     }
     
+    getLength() {
+        return this._length
+    } 
+    
     setResult(result) {
         this.#resetBuffer()
         this.input.textContent = result
+        if (this.input.textContent.includes(":("))
+            setTimeout(() => {this.resetAll()}, 400)
     }
     
     getStatement() {
@@ -20,7 +27,8 @@ export class Field {
     
     sendKey(key) {
         if (this.input.textContent === "0" && key !== ".") this.#clearInput()
-        if (key === "." && this.input.textContent.includes(".")) return
+        if (key === "." && this.input.textContent.includes(".") 
+            || this.input.textContent.length === this._length) return
         this.#append(key)
     }
     
