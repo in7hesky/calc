@@ -5,29 +5,34 @@
     <title>Calc</title>
     <link rel="stylesheet" href="./styles/style.css">
     <script src="./scripts/script.js" type="module" defer></script>
-    <script src="scripts/operator.js" type="module"></script>
+    <script src="scripts/processor.js" type="module"></script>
+    <script src="scripts/field.js" type="module"></script>
+    <script src="scripts/keyboard.js" type="module"></script>
 </head>
 <body>
     <div class="wrapper">
-        <div class="field">0</div>
+        <div class="field">
+            <div class="buffer"></div>
+            <div class="input">0</div>
+        </div>
         <div class="grid">
-            <button class="clear">AC</button>
-            <button class="operand dot" value=".">.</button>
-            <button class="operand divide" value="/">/</button>
+            <button class="reset">AC</button>
+            <button class="dot" value=".">.</button>
+            <button class="operator divide" value="/">/</button>
             <button class="digit" value="1">1</button>
             <button class="digit" value="2">2</button>
             <button class="digit" value="3">3</button>
-            <button class="operand multiply" value="*">*</button>
+            <button class="operator multiply" value="*">*</button>
             <button class="digit" value="4">4</button>
             <button class="digit" value="5">5</button>
             <button class="digit" value="6">6</button>
-            <button class="operand subtract" value="-">-</button>
+            <button class="operator subtract" value="-">-</button>
             <button class="digit" value="7">7</button>
             <button class="digit" value="8">8</button>
             <button class="digit" value="9">9</button>
-            <button class="operand add" value="+">+</button>
+            <button class="operator add" value="+">+</button>
             <button class="digit" value="0">0</button>
-            <button class="operand equals">=</button>
+            <button class="equals">=</button>
         </div>
     </div>
 

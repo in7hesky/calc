@@ -11,6 +11,13 @@
     padding: 5px 5px;
     font-size: 30px;
     border-bottom: 2px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.buffer {
+    color: grey;
+    font-size: 0.6em;
 }
 
 .grid {
@@ -18,7 +25,7 @@
     grid-template-columns: repeat(4, 1fr);
 }
 
-.clear, .digit[value="0"], .equals {
+.reset, .digit[value="0"], .equals {
     grid-column: span 2;
 }
 

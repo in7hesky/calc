@@ -1,6 +1,7 @@
-export class Operator {
-    operate(statement) {
-        statement = statement.split(" ")
+export class Processor {
+    
+    operate(field) {
+        let statement = field.getStatement().split(" ")
         let operation
         switch (statement[1]) {
             case "+":
@@ -16,7 +17,7 @@ export class Operator {
             case "/":
                 operation = this.#divide
         }
-        return operation(+statement[0], +statement[2])
+        field.setResult(operation(+statement[0], +statement[2]))
     }
 
     #add(a, b) {
